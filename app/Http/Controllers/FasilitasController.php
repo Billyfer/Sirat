@@ -34,7 +34,7 @@ class FasilitasController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'id_paket' => 'required|exists:pakets,id',
+            'id_paket' => 'required|exists:paket,id',
             'peralatan' => 'required|array',
             'peralatan.*' => 'required|string|max:255',
             'keterangan' => 'nullable|array',
@@ -84,7 +84,7 @@ class FasilitasController extends Controller
     public function update(Request $request, Fasilitas $fasilitas)
     {
         $validatedData = $request->validate([
-            'id_paket' => 'required|exists:pakets,id',
+            'id_paket' => 'required|exists:paket,id',
             'peralatan' => 'required|string|max:255',
             'keterangan' => 'nullable|string|max:255',
         ]);
